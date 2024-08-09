@@ -1,0 +1,18 @@
+O sistema proposto é uma solução integrada para monitoramento e controle de temperaturas de sensores, que utiliza Python e várias bibliotecas e ferramentas.
+
+Primeiramente, o servidor Flask é configurado para criar uma API que recebe dados dos sensores em formato JSON. Quando os dados são recebidos, o servidor utiliza um modelo preditivo para analisar esses dados e prever futuras temperaturas. A previsão é então retornada como resposta à solicitação.
+
+O modelo preditivo, desenvolvido com a biblioteca scikit-learn, é treinado com dados simulados de temperaturas de motores, geradores e frigoríficos. Este modelo é salvo em um arquivo e carregado pelo servidor Flask para fazer previsões com base nos dados recebidos.
+
+Para a integração com sensores, é utilizado um cliente MQTT que se conecta a um broker MQTT para receber mensagens de sensores, como aqueles conectados a microcontroladores Arduino ou Raspberry Pi. Quando uma mensagem é recebida, o cliente MQTT envia esses dados para o servidor Flask através da API criada.
+
+O fluxo de funcionamento é o seguinte:
+
+Sensores enviam dados para o broker MQTT.
+O cliente MQTT recebe esses dados e os encaminha para o servidor Flask.
+O servidor Flask processa os dados e usa o modelo preditivo para gerar previsões.
+As previsões são enviadas de volta ao cliente MQTT e podem ser utilizadas para monitorar e ajustar as condições de temperatura.
+Esse sistema permite o monitoramento remoto e o controle das temperaturas com base em análises preditivas, facilitando a gestão e a manutenção de equipamentos em ambientes industriais e comerciais.
+
+
+
